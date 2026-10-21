@@ -129,6 +129,8 @@ function onScroll(){
 }
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 addEventListener('load',updateSectionNav);
+addEventListener('resize',updateSectionNav);
+addEventListener('hashchange',updateSectionNav);
 const revealObserver = new IntersectionObserver(entries=>entries.forEach(entry=>{
   if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}
 }),{threshold:.08});
